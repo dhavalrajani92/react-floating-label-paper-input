@@ -10,7 +10,8 @@
     "floating",
     "material desgin",
     "react-floating-input",
-    "react-input"
+    "react-input",
+    "react-floating-label"
   ],
   "main": "dist/index.js",
   "dependencies": {
