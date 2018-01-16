@@ -35,7 +35,7 @@ If you are passing `type="select"` then this options need to pass a props to dis
 
 ```
 import React,{Component} from "react"
-import FloatingLabel from "react-floating-label-paper-input"
+import FloatingLabelInput from "react-floating-label-paper-input"; 
 
 class FloatingLabelTextExample extends Component{
     constructor(props){
@@ -59,7 +59,7 @@ class FloatingLabelTextExample extends Component{
         });
     }
     render(){
-        retuen(
+        return(
             <FloatingLabelInput type={"text"} labelName={"firstname"} onChange={(e) => {e.preventDefault();this.handleForm("firstname", e.currentTarget.value)}} name={"firstname"} value={this.state.formData.firstname ? this.state.formData.firstname : ""} isValid={this.isValid('firstname')} errorMessage={this.getValidationMessages('firstname')} />
         )
     }
@@ -71,7 +71,7 @@ export default FloatingLabelTextExample;
 #### For more info about props using inputMask [InputMask](https://github.com/sanniassin/react-input-mask)
 ```
 import React,{Component} from "react"
-import FloatingLabel from "react-floating-label-paper-input"
+import FloatingLabelInput from "react-floating-label-paper-input"; 
 
 class FloatingLabelInputMaskExample extends Component{
     constructor(props){
@@ -105,7 +105,7 @@ export default FloatingLabelInputMaskExample;
 ## Example `type=select`
 ```
 import React,{Component} from "react"
-import FloatingLabel from "react-floating-label-paper-input"
+import FloatingLabelInput from "react-floating-label-paper-input"; 
 
 class FloatingLabelInputMaskExample extends Component{
     constructor(props){

@@ -73,11 +73,11 @@ config.module.rules.push({
 });
 config.module.rules.push({
     test: /\.scss$/,
-    loaders: ["style-loader", "css-loader", 'resolve-url-loader', "sass-loader"]
+    loaders: ["css-loader", 'resolve-url-loader', "sass-loader"]
 });
 config.module.rules.push({
     test: /\.sass$/,
-    loaders: ["style-loader", "css-loader", 'resolve-url-loader', "sass-loader"]
+    loaders: ["css-loader", 'resolve-url-loader', "sass-loader"]
 });
 
 config.module.rules.push({
@@ -136,7 +136,7 @@ if (__DEV__) {
 }
 
 
-/*if (__PROD__) {
+if (__PROD__) {
     config.plugins.push(
         new webpack.LoaderOptionsPlugin({
             minimize: true,
@@ -159,5 +159,5 @@ if (__DEV__) {
             },
         })
     )
-}*/
+}
 module.exports = config
