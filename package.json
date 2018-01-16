@@ -43,6 +43,10 @@
     "webpack-dev-server": "^2.4.5",
     "webpack-hot-middleware": "^2.18.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhavalrajani92/react-floating-label-paper-input"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "start": "cross-env NODE_ENV=development webpack --watch --config build/webpack.config.js",
