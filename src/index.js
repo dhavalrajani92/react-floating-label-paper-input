@@ -83,17 +83,46 @@ class FloatingLabelInput extends Component {
         }
     }
     render() {
-        var { labelName,isValid,errorMessage,placeholder,inputMaskType,type,...props } = this.props;
-        return (
-            <div className={this.state.classes.join(" ")}>
-                <label className="control-label" htmlFor="default">{labelName ? labelName : "Default Label"}</label>
-                {this.props.type && this.props.type === "inputMask" ? <InputMask type={inputMaskType || "text"} placeholder={this.state.placeholder} {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut} ref={(input)=>{this.inputs = input}} className={this.state.inputClasses.join(" ")}/> : <input id={"default"} {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut} ref={(input)=>{this.inputs = input}} className={this.state.inputClasses.join(" ")} type={this.props.type || "text"} />}
+        var {labelName, isValid, errorMessage, placeholder, inputMaskType, type,options, ...props} = this.props;
+        if (type === "select") {
+            return (
+                <div className={this.state.classes.join(" ")}>
+                    <label className="control-label"
+                           htmlFor="first-name">{this.props.labelName ? this.props.labelName : "Default Label"}</label>
+                    <select {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut} ref={(input) => {
+                        this.inputs = input
+                    }} className={this.state.inputClasses.join(" ")}>
+                        <option value={""}></option>
+                        {options.map((option, index) => {
+                                return <option key={index} value={option.value}>{option.label}</option>
+                        })}
+                    </select>
+                    {this.state.classes.indexOf("floating-label-completed") != -1 ?
+                        <span className="paper-input-bar"></span> : ""}
+                    {isValid === false ? <span className={"has-error-text"}>{errorMessage}</span> : null}
+                </div>
+            )
+        } else {
+            return (
+                <div className={this.state.classes.join(" ")}>
+                    <label className="control-label" htmlFor="default">{labelName ? labelName : "Default Label"}</label>
+                    {this.props.type && this.props.type === "inputMask" ?
+                        <InputMask type={inputMaskType || "text"} placeholder={this.state.placeholder} {...props}
+                                   onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut} ref={(input) => {
+                            this.inputs = input
+                        }} className={this.state.inputClasses.join(" ")}/> :
+                        <input id={"default"} {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut}
+                               ref={(input) => {
+                                   this.inputs = input
+                               }} className={this.state.inputClasses.join(" ")} type={this.props.type || "text"}/>}
 
-                {this.state.classes.indexOf("floating-label-completed") != -1 ? <span className="paper-input-bar"></span> : ""}
-                {isValid === false ? <span className={"has-error-text"}>{errorMessage}</span>: null}
-            </div>
-        )
+                    {this.state.classes.indexOf("floating-label-completed") != -1 ?
+                        <span className="paper-input-bar"></span> : ""}
+                    {isValid === false ? <span className={"has-error-text"}>{errorMessage}</span> : null}
+                </div>
+            )
 
+        }
     }
 }
 

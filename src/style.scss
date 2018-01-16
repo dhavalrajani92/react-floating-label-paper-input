@@ -55,7 +55,7 @@
 
 /*floating label*/
 .floating-label { position: relative;}
-.floating-label input{
+.floating-label input,.floating-label select{
 display: block;    width: 100%;}
 .floating-label label { display:inline-block; max-width:100%;transform: translateY(26px); -moz-transform:translateY(26px); -webkit-transform:translateY(26px); -ms-transform:translateY(26px); -o-transform:translateY(26px); margin:0; font-size: 16px; line-height:24px; transition-duration: 0.2s; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); margin-bottom:4px;}
 .floating-label .form-control{position: relative;}
