@@ -4,7 +4,7 @@
 ```npm install react-floating-label-paper-input --save```
 
 ## Demo
-Coming Soon
+[Demo](http://react-floating-label-paper-input.surge.sh/)
 
 ### Properties
 
