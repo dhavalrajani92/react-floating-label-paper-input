@@ -73,11 +73,11 @@ config.module.rules.push({
 });
 config.module.rules.push({
     test: /\.scss$/,
-    loaders: ["css-loader", 'resolve-url-loader', "sass-loader"]
+    loaders: ["style-loader","css-loader", 'resolve-url-loader', "sass-loader"]
 });
 config.module.rules.push({
     test: /\.sass$/,
-    loaders: ["css-loader", 'resolve-url-loader', "sass-loader"]
+    loaders: ["style-loader","css-loader", 'resolve-url-loader', "sass-loader"]
 });
 
 config.module.rules.push({
