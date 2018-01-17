@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import React, { Component } from "react";
 import Immutable from "immutable";
 import InputMask from 'react-input-mask';
@@ -105,13 +104,13 @@ class FloatingLabelInput extends Component {
         } else {
             return (
                 <div className={this.state.classes.join(" ")}>
-                    <label className="control-label" htmlFor="default">{labelName ? labelName : "Default Label"}</label>
+                    <label className="control-label">{labelName ? labelName : "Default Label"}</label>
                     {this.props.type && this.props.type === "inputMask" ?
                         <InputMask type={inputMaskType || "text"} placeholder={this.state.placeholder} {...props}
                                    onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut} ref={(input) => {
                             this.inputs = input
                         }} className={this.state.inputClasses.join(" ")}/> :
-                        <input id={"default"} {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut}
+                        <input {...props} onFocus={this.handleOnFocus} onBlur={this.handleOnFocusOut}
                                ref={(input) => {
                                    this.inputs = input
                                }} className={this.state.inputClasses.join(" ")} type={this.props.type || "text"}/>}
